@@ -6,12 +6,22 @@ export function SkillsSection() {
     <section className="shell capabilities section">
       <FadeIn>
         <div className="section-top">
-          <span className="kicker">03 / Tech Stack</span>
-          <p>
-          Built with a modern full-stack ecosystem, combining React, Next.js, Node.js, Express, MongoDB, and AI technologies to create scalable, maintainable, and user-centric applications.
-          </p>
+          <span className="kicker">03 / Technical Expertise</span>
+
+          <h2 className="display">
+            Technologies powering every stage of development.
+          </h2>
+
+          {/* <p>
+            I leverage a modern technology stack to design, develop, and deploy
+            scalable web applications. From intuitive frontend interfaces with
+            React and Next.js to robust backend services using Node.js,
+            Express.js, and MongoDB, I focus on building secure,
+            high-performance, and maintainable software solutions.
+          </p> */}
         </div>
       </FadeIn>
+
       <FadeIn>
         <div className="skill-cloud">
           {skills.map((skill, index) => (

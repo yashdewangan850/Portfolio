@@ -133,6 +133,7 @@ a {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 700;
+  
 }
 .eyebrow {
   display: flex;
@@ -410,6 +411,72 @@ em {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
+}
+
+.about-side{
+    position:sticky;
+    top:120px;
+}
+
+.about-meta{
+    margin-top:40px;
+    display:flex;
+    flex-direction:column;
+    gap:28px;
+}
+
+.about-meta span{
+    font-size:.8rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--muted);
+}
+
+.about-meta h4{
+    margin-top:6px;
+    font-size:1.1rem;
+    font-weight:600;
+}
+
+.about-content{
+    max-width:760px;
+}
+
+.about-content .display{
+    margin-bottom:32px;
+}
+
+.about-content .large-copy{
+    margin-bottom:28px;
+    line-height:1.9;
+    color:var(--muted);
+}
+
+.about-tech{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin:40px 0;
+}
+
+.about-tech span{
+    padding:10px 18px;
+    border:1px solid var(--border);
+    border-radius:999px;
+    font-size:.9rem;
+    transition:.3s;
+}
+
+.about-tech span:hover{
+    transform:translateY(-2px);
+    border-color:#3b82f6;
+}
+
+.text-link{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-weight:600;
 }
 .display {
   font-size: clamp(49px, 6vw, 88px);
