@@ -1,0 +1,304 @@
+/* ==========================================
+   LOADING PAGE
+========================================== */
+
+.loading-page {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at top, #1e293b 0%, #0f172a 45%, #020617 100%);
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.loading-container {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    z-index: 2;
+}
+
+/* ==========================================
+   GLOW ORB
+========================================== */
+
+.loading-orb {
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(99,102,241,.45),
+        transparent 70%
+    );
+
+    filter: blur(45px);
+
+    animation: pulseOrb 4s ease-in-out infinite;
+
+    z-index: -1;
+}
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.loading-logo {
+
+    width: 110px;
+    height: 110px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #6366f1,
+        #3b82f6
+    );
+
+    color: white;
+
+    font-size: 3rem;
+    font-weight: 800;
+
+    margin-bottom: 2rem;
+
+    box-shadow: 0 25px 70px rgba(99,102,241,.35);
+
+    animation: logoFloat 2.8s ease-in-out infinite;
+}
+
+.loading-logo span {
+    animation: rotateLetter 8s linear infinite;
+}
+
+/* ==========================================
+   TEXT
+========================================== */
+
+.loading-container h2 {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: .8rem;
+}
+
+.loading-container p {
+    color: rgba(255,255,255,.72);
+    max-width: 420px;
+    line-height: 1.8;
+}
+
+/* ==========================================
+   LOADING BAR
+========================================== */
+
+.loading-bar {
+
+    width: 320px;
+    height: 8px;
+
+    margin-top: 2.5rem;
+
+    border-radius: 999px;
+
+    overflow: hidden;
+
+    background: rgba(255,255,255,.12);
+
+    position: relative;
+}
+
+.loading-progress {
+
+    width: 40%;
+    height: 100%;
+
+    border-radius: 999px;
+
+    background: linear-gradient(
+        90deg,
+        #6366f1,
+        #60a5fa
+    );
+
+    animation: loadingProgress 1.8s ease-in-out infinite;
+}
+
+/* ==========================================
+   FLOATING BLOBS
+========================================== */
+
+.loading-page::before,
+.loading-page::after {
+
+    content: "";
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: rgba(99,102,241,.14);
+
+    filter: blur(40px);
+}
+
+.loading-page::before {
+
+    width: 220px;
+    height: 220px;
+
+    top: 8%;
+    left: 8%;
+
+    animation: floatBlob1 9s ease-in-out infinite;
+}
+
+.loading-page::after {
+
+    width: 260px;
+    height: 260px;
+
+    bottom: 8%;
+    right: 8%;
+
+    animation: floatBlob2 10s ease-in-out infinite;
+}
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes logoFloat {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-14px);
+    }
+}
+
+@keyframes rotateLetter {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulseOrb {
+
+    0%,100% {
+        transform: scale(.9);
+        opacity: .5;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+}
+
+@keyframes loadingProgress {
+
+    0% {
+        transform: translateX(-120%);
+    }
+
+    100% {
+        transform: translateX(320%);
+    }
+}
+
+@keyframes floatBlob1 {
+
+    0%,100% {
+        transform: translate(0,0);
+    }
+
+    50% {
+        transform: translate(35px,-25px);
+    }
+}
+
+@keyframes floatBlob2 {
+
+    0%,100% {
+        transform: translate(0,0);
+    }
+
+    50% {
+        transform: translate(-40px,30px);
+    }
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:768px) {
+
+    .loading-logo {
+
+        width: 90px;
+        height: 90px;
+
+        font-size: 2.3rem;
+    }
+
+    .loading-container h2 {
+        font-size: 1.6rem;
+    }
+
+    .loading-bar {
+        width: 240px;
+    }
+
+    .loading-container p {
+        font-size: .95rem;
+        padding: 0 1rem;
+    }
+}
+
+.loading-percent{
+    margin-top:20px;
+    color:white;
+    font-size:14px;
+    letter-spacing:2px;
+    opacity:.7;
+}
+
+.loading-progress{
+    width:0%;
+    transition:width .2s linear;
+}

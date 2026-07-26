@@ -1,0 +1,491 @@
+/* ==========================================
+   PREMIUM HEADER
+========================================== */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+
+  transition: all 0.35s ease;
+
+  background: transparent;
+}
+
+.nav-scroll {
+  background: rgba(15, 15, 18, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid var(--line);
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
+}
+
+.nav-inner {
+  width: min(1280px, calc(100% - 48px));
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.brand {
+  display: flex;
+  align-items: center;
+
+  text-decoration: none;
+
+  font-size: 28px;
+  font-weight: 800;
+
+  letter-spacing: -1.2px;
+
+  color: var(--ink);
+
+  transition: 0.3s;
+}
+
+.brand span {
+  color: var(--primary);
+
+  margin-left: 2px;
+}
+
+.brand:hover {
+  transform: translateY(-2px);
+
+  color: var(--primary);
+}
+/* ==========================================
+   DESKTOP NAVIGATION
+========================================== */
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.desktop-nav a {
+  position: relative;
+
+  text-decoration: none;
+
+  color: var(--muted);
+
+  font-size: 15px;
+  font-weight: 600;
+
+  letter-spacing: 0.2px;
+
+  transition: all 0.3s ease;
+}
+
+.desktop-nav a:hover {
+  color: var(--ink);
+}
+
+/* Underline Animation */
+
+.desktop-nav a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -8px;
+
+  width: 0;
+  height: 2px;
+
+  border-radius: 20px;
+
+  background: linear-gradient(90deg, var(--primary), #7c5cff);
+
+  transition: width 0.35s ease;
+}
+
+.desktop-nav a:hover::after {
+  width: 100%;
+}
+
+/* Active Link */
+
+.desktop-nav a.active {
+  color: var(--ink);
+}
+
+.desktop-nav a.active::after {
+  width: 100%;
+}
+
+/* ==========================================
+   RIGHT ACTIONS
+========================================== */
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+/* ==========================================
+   RESUME BUTTON
+========================================== */
+
+.resume-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 44px;
+  padding: 0 22px;
+
+  border-radius: 999px;
+  border: 1px solid transparent;
+
+  text-decoration: none;
+
+  background: var(--primary);
+  color: #fff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.resume-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.35);
+
+  filter: brightness(1.05);
+}
+
+/* ==========================================
+   THEME BUTTON
+========================================== */
+
+.theme-btn {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 1px solid var(--line);
+
+  background: var(--surface);
+
+  color: var(--ink);
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+  background: var(--primary);
+
+  color: #fff;
+
+  transform: rotate(180deg);
+}
+
+/* ==========================================
+   MENU BUTTON
+========================================== */
+
+.menu-btn {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  border: 1px solid var(--line);
+
+  background: var(--surface);
+
+  color: var(--ink);
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+  background: var(--primary);
+
+  color: #fff;
+
+  transform: scale(1.05);
+}
+
+.menu-btn:active {
+  transform: scale(0.96);
+}
+/* ==========================================
+   MOBILE MENU
+========================================== */
+
+.mobile-menu {
+  position: absolute;
+
+  top: 90px;
+  left: 20px;
+  right: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  padding: 24px;
+
+  border: 1px solid var(--line);
+  border-radius: 24px;
+
+  background: rgba(18, 18, 20, 0.92);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.mobile-menu a {
+  text-decoration: none;
+
+  color: var(--muted);
+
+  font-size: 16px;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.mobile-menu a:hover {
+  color: var(--primary);
+
+  padding-left: 8px;
+}
+
+.mobile-menu a.active {
+  color: var(--primary);
+}
+
+.mobile-resume {
+  margin-top: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 46px;
+
+  border-radius: 14px;
+
+  background: var(--primary);
+
+  color: #fff !important;
+
+  font-weight: 700;
+}
+
+.mobile-resume:hover {
+  transform: translateY(-2px);
+
+  padding-left: 0 !important;
+
+  color: #fff;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .resume-btn {
+    display: none;
+  }
+
+  .menu-btn {
+    display: flex;
+  }
+}
+
+@media (min-width: 901px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    height: 72px;
+  }
+
+  .nav-inner {
+    width: calc(100% - 28px);
+  }
+
+  .brand {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-menu {
+    left: 14px;
+    right: 14px;
+
+    top: 82px;
+
+    padding: 20px;
+  }
+
+  .theme-btn,
+  .menu-btn {
+    width: 42px;
+    height: 42px;
+  }
+}
+/* ==========================================
+   PREMIUM EFFECTS
+========================================== */
+
+/* Smooth Transition */
+
+.nav,
+.nav *,
+.desktop-nav a,
+.resume-btn,
+.theme-btn,
+.menu-btn,
+.mobile-menu a {
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Brand Glow */
+
+.brand:hover {
+  text-shadow: 0 0 18px rgba(99, 102, 241, 0.45);
+}
+
+/* Resume Gradient */
+
+.resume-btn {
+  background: linear-gradient(135deg, #6366f1, #7c3aed);
+}
+
+.resume-btn:hover {
+  box-shadow: 0 15px 35px rgba(99, 102, 241, 0.4);
+}
+
+/* Theme Button Glow */
+
+.theme-btn:hover {
+  box-shadow: 0 10px 28px rgba(99, 102, 241, 0.28);
+}
+
+/* Menu Glow */
+
+.menu-btn:hover {
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.25);
+}
+
+/* Active Link */
+
+.desktop-nav a.active {
+  color: var(--primary);
+}
+
+/* Selection */
+
+.nav ::selection {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ==========================================
+   LIGHT MODE
+========================================== */
+
+html[data-theme="light"] .nav-scroll {
+  background: rgba(255, 255, 255, 0.78);
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+html[data-theme="light"] .mobile-menu {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+html[data-theme="light"] .theme-btn,
+html[data-theme="light"] .menu-btn {
+  background: #fff;
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+.desktop-nav a:focus-visible,
+.resume-btn:focus-visible,
+.theme-btn:focus-visible,
+.menu-btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+/* ==========================================
+   PERFORMANCE
+========================================== */
+
+.nav,
+.mobile-menu {
+  will-change: transform, opacity;
+}
+
+.brand,
+.resume-btn,
+.theme-btn,
+.menu-btn {
+  backface-visibility: hidden;
+}
+
+/* ==========================================
+   END
+========================================== */

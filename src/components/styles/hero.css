@@ -1,0 +1,380 @@
+/* ==========================================
+   HERO
+========================================== */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ---------- Background ---------- */
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.grid-bg {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+
+  background-size: 60px 60px;
+
+  mask-image: radial-gradient(circle, black 35%, transparent 90%);
+}
+
+/* ---------- Aurora ---------- */
+
+.aurora span{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:.45;
+}
+
+.aurora-1{
+    width:420px;
+    height:420px;
+
+    background:#5b8cff;
+
+    top:-120px;
+    left:-120px;
+
+    animation:float 12s ease-in-out infinite;
+}
+
+.aurora-2{
+    width:420px;
+    height:420px;
+
+    background:#7c3aed;
+
+    right:-120px;
+    top:10%;
+
+    animation:float 15s ease-in-out infinite reverse;
+}
+
+.aurora-3{
+    width:340px;
+    height:340px;
+
+    background:#00d4ff;
+
+    bottom:-100px;
+    left:35%;
+
+    animation:float 18s ease-in-out infinite;
+}
+
+/* ---------- Blobs ---------- */
+
+.blob{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(90px);
+    opacity:.18;
+}
+
+.blob1{
+    width:320px;
+    height:320px;
+
+    background:var(--primary);
+
+    top:15%;
+    left:8%;
+}
+
+.blob2{
+    width:260px;
+    height:260px;
+
+    background:#8b5cf6;
+
+    right:8%;
+    bottom:10%;
+}
+
+/* ---------- Badge ---------- */
+
+.eyebrow{
+
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    border:1px solid var(--line);
+
+    background:rgba(255,255,255,.05);
+
+    color:var(--muted);
+
+    margin-bottom:30px;
+
+    backdrop-filter:blur(20px);
+}
+
+.pulse{
+    width:10px;
+    height:10px;
+
+    border-radius:50%;
+
+    background:#22c55e;
+
+    animation:pulse 1.6s infinite;
+}
+
+/* ---------- Heading ---------- */
+
+.hero h1{
+
+    font-size:clamp(56px,9vw,120px);
+
+    line-height:.95;
+
+    letter-spacing:-.06em;
+
+    font-weight:900;
+
+    margin-bottom:28px;
+}
+
+.hero h1 em{
+
+    font-style:normal;
+
+    background:linear-gradient(
+    90deg,
+    #60a5fa,
+    #8b5cf6,
+    #22d3ee
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* ---------- Description ---------- */
+
+.hero-description{
+
+    max-width:720px;
+
+    margin:0 auto;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    color:var(--muted);
+}
+
+/* ---------- Buttons ---------- */
+
+.hero-actions{
+
+    display:flex;
+    justify-content:center;
+    gap:18px;
+
+    margin-top:45px;
+}
+
+.primary-btn,
+.secondary-btn{
+
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    padding:15px 28px;
+
+    border-radius:999px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:var(--transition);
+}
+
+.primary-btn{
+
+    background:var(--primary);
+    color:white;
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-4px);
+}
+
+.secondary-btn{
+
+    border:1px solid var(--line);
+    color:var(--ink);
+}
+
+.secondary-btn:hover{
+
+    background:var(--surface);
+}
+
+/* ---------- Bottom ---------- */
+
+.hero-bottom{
+
+    margin-top:70px;
+
+    display:flex;
+    justify-content:center;
+}
+
+.circle-link{
+
+    width:74px;
+    height:74px;
+
+    border-radius:50%;
+
+    display:grid;
+    place-items:center;
+
+    border:1px solid var(--line);
+
+    color:var(--ink);
+
+    text-decoration:none;
+
+    transition:var(--transition);
+}
+
+.circle-link:hover{
+
+    background:var(--primary);
+    color:white;
+}
+
+/* ---------- Orbit ---------- */
+
+.hero-orbit{
+
+    margin-top:70px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    letter-spacing:.28em;
+
+    text-transform:uppercase;
+}
+
+/* ---------- Animation ---------- */
+
+@keyframes float{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-40px);
+}
+
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+opacity:1;
+}
+
+50%{
+transform:scale(1.8);
+opacity:.5;
+}
+
+100%{
+transform:scale(1);
+opacity:1;
+}
+
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:768px){
+
+.hero{
+
+padding-top:120px;
+padding-bottom:80px;
+}
+
+.hero h1{
+
+font-size:56px;
+}
+
+.hero-description{
+
+font-size:17px;
+}
+
+.hero-actions{
+
+flex-direction:column;
+align-items:center;
+}
+
+.primary-btn,
+.secondary-btn{
+
+width:100%;
+max-width:280px;
+justify-content:center;
+}
+
+.hero-orbit{
+
+font-size:12px;
+gap:10px;
+flex-wrap:wrap;
+}
+
+}

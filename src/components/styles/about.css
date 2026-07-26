@@ -1,0 +1,510 @@
+/* ==========================================
+   ABOUT SECTION
+========================================== */
+
+.about {
+  padding: 8rem 0;
+  position: relative;
+}
+
+.about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right,
+      rgba(99, 102, 241, .08),
+      transparent 35%);
+  pointer-events: none;
+}
+
+/* ==========================================
+   SECTION HEADING
+========================================== */
+
+.section-heading {
+  max-width: 760px;
+  margin: 0 auto 5rem;
+  text-align: center;
+}
+
+.section-heading h2 {
+  margin-top: 1rem;
+}
+
+.section-heading h2 span {
+  color: #818cf8;
+}
+
+.section-intro {
+  margin-top: 1.25rem;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* ==========================================
+   GRID
+========================================== */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* ==========================================
+   LEFT CARD
+========================================== */
+
+.about-card {
+  position: sticky;
+  top: 110px;
+
+  padding: 2rem;
+
+  border-radius: 28px;
+
+  background: rgba(255,255,255,.03);
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  backdrop-filter: blur(20px);
+
+  transition: .35s;
+}
+
+.about-card:hover {
+
+  transform: translateY(-8px);
+
+  border-color: rgba(99,102,241,.35);
+
+  box-shadow:
+      0 18px 50px rgba(0,0,0,.28),
+      0 0 35px rgba(99,102,241,.18);
+}
+
+/* ==========================================
+   PROFILE BADGE
+========================================== */
+
+.profile-badge {
+
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+
+  padding: .65rem 1rem;
+
+  margin-bottom: 1.5rem;
+
+  border-radius: 999px;
+
+  background: rgba(99,102,241,.12);
+
+  color: #818cf8;
+
+  border: 1px solid rgba(99,102,241,.25);
+
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+/* ==========================================
+   ABOUT TEXT
+========================================== */
+
+.about-card h3 {
+
+  font-size: 1.6rem;
+
+  margin-bottom: 1rem;
+}
+
+.about-card p {
+
+  color: var(--muted);
+
+  line-height: 1.9;
+}
+
+/* ==========================================
+   META
+========================================== */
+
+.about-meta {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1rem;
+
+  margin-top: 2rem;
+}
+
+.about-meta > div {
+
+  display: flex;
+
+  gap: 1rem;
+
+  align-items: center;
+
+  padding: 1rem;
+
+  border-radius: 18px;
+
+  background: rgba(255,255,255,.04);
+
+  border: 1px solid rgba(255,255,255,.06);
+
+  transition: .3s;
+}
+
+.about-meta > div:hover {
+
+  border-color: rgba(99,102,241,.3);
+
+  transform: translateX(5px);
+}
+
+.about-meta svg {
+
+  color: #818cf8;
+
+  flex-shrink: 0;
+}
+
+.about-meta span {
+
+  display: block;
+
+  font-size: .8rem;
+
+  color: var(--muted);
+
+  margin-bottom: .25rem;
+}
+
+.about-meta h4 {
+
+  font-size: .95rem;
+
+  font-weight: 600;
+}
+
+/* ==========================================
+   RIGHT CONTENT
+========================================== */
+
+.about-main {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2rem;
+}
+
+.about-copy {
+
+  font-size: 1.1rem;
+
+  line-height: 1.9;
+
+  color: var(--muted);
+}
+/* ==========================================
+   SERVICE GRID
+========================================== */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.service-card {
+  position: relative;
+
+  padding: 1.8rem;
+
+  border-radius: 24px;
+
+  background: rgba(255,255,255,.03);
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  overflow: hidden;
+
+  transition:
+    transform .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
+}
+
+.service-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(circle at top right,
+      rgba(99,102,241,.12),
+      transparent 60%);
+
+  opacity: 0;
+
+  transition: opacity .35s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(99,102,241,.35);
+
+  box-shadow:
+    0 18px 45px rgba(0,0,0,.25),
+    0 0 30px rgba(99,102,241,.18);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-icon {
+  width: 56px;
+  height: 56px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 1rem;
+
+  border-radius: 16px;
+
+  color: #818cf8;
+
+  background: rgba(99,102,241,.12);
+
+  border: 1px solid rgba(99,102,241,.22);
+
+  transition: .35s;
+}
+
+.service-card:hover .service-icon {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+.service-card h3 {
+  margin-bottom: .8rem;
+  font-size: 1.15rem;
+}
+
+.service-card p {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: .95rem;
+}
+
+/* ==========================================
+   TECH STACK
+========================================== */
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .85rem;
+}
+
+.tech-stack span {
+  padding: .75rem 1rem;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,.04);
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  font-size: .9rem;
+  font-weight: 500;
+
+  transition:
+    background .3s,
+    border-color .3s,
+    transform .3s;
+}
+
+.tech-stack span:hover {
+  background: #6366f1;
+  border-color: #6366f1;
+  color: #fff;
+}
+
+/* ==========================================
+   STATS
+========================================== */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.stat-card {
+  text-align: center;
+
+  padding: 1.8rem;
+
+  border-radius: 22px;
+
+  background: rgba(255,255,255,.03);
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  transition:
+    transform .35s,
+    border-color .35s;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(99,102,241,.35);
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  margin-bottom: .4rem;
+  color: #818cf8;
+}
+
+.stat-card p {
+  color: var(--muted);
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.about-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.about-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+
+  padding: .95rem 1.4rem;
+
+  border-radius: 999px;
+
+  background: #6366f1;
+  color: #fff;
+
+  text-decoration: none;
+  font-weight: 600;
+
+  transition:
+    transform .3s,
+    box-shadow .3s;
+}
+
+.about-btn:hover {
+  box-shadow: 0 10px 30px rgba(99,102,241,.35);
+}
+
+.about-btn.secondary {
+  background: transparent;
+  color: inherit;
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+.about-btn.secondary:hover {
+  background: rgba(255,255,255,.05);
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 1100px) {
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card {
+    position: relative;
+    top: 0;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .about {
+    padding: 6rem 0;
+  }
+
+  .service-grid,
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-actions {
+    flex-direction: column;
+  }
+
+  .about-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .tech-stack {
+    gap: .6rem;
+  }
+
+  .tech-stack span {
+    width: 100%;
+    text-align: center;
+  }
+
+  .about-copy {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .about-card {
+    padding: 1.5rem;
+  }
+
+  .service-card {
+    padding: 1.5rem;
+  }
+
+  .profile-badge {
+    font-size: .8rem;
+  }
+
+  .stat-card h3 {
+    font-size: 1.7rem;
+  }
+}

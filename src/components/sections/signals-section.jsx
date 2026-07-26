@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { FadeIn } from "@/components/motion/fade-in";
@@ -61,31 +63,77 @@ export function SignalsSection() {
         </div>
       </FadeIn>
 
-      <div className="proof-grid">
+      <motion.div
+        className="proof-grid"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={{
+          hidden: {},
+          show: {
+            transition: {
+              staggerChildren: 0.1,
+            },
+          },
+        }}
+      >
         {signals.map((signal, index) => (
           <FadeIn key={signal.label} delay={index * 0.06}>
-            <article>
+            <motion.article
+              className="signal-card"
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  y: 40,
+                },
+                show: {
+                  opacity: 1,
+                  y: 0,
+                },
+              }}
+              whileHover={{
+                y: -10,
+                scale: 1.02,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 220,
+              }}
+            >
               <span>{signal.label}</span>
               <strong>{signal.title}</strong>
               <p>{signal.copy}</p>
 
               {signal.external ? (
-                <a href={signal.href} target="_blank" rel="noreferrer">
+                <motion.a
+                  href={signal.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  whileHover={{
+                    x: 6,
+                  }}
+                >
                   {signal.cta} <ArrowUpRight size={15} />
-                </a>
+                </motion.a>
               ) : signal.download ? (
-                <a href={signal.href} download>
+                <motion.a
+                  href={signal.href}
+                  download
+                  whileHover={{
+                    x: 6,
+                  }}
+                >
                   {signal.cta} <ArrowDownRight size={15} />
-                </a>
+                </motion.a>
               ) : (
                 <Link href={signal.href}>
                   {signal.cta} <ArrowUpRight size={15} />
                 </Link>
               )}
-            </article>
+            </motion.article>
           </FadeIn>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }
