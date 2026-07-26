@@ -40,7 +40,7 @@ export const projects = [
     tags: ["React", "JavaScript", "Tailwind CSS", "Framer Motion", "UI/UX"],
     tint: "coral",
     github:"https://github.com/yashdewangan850/Mac-Project",
-    live:"",
+    live:"https://web-besd-mac-os.netlify.app/",
     overview:"macOS Clone is a modern web application that recreates the macOS desktop experience in the browser. Designed with a strong focus on usability and visual accuracy, it includes an interactive desktop, draggable windows, a functional dock, Finder-inspired file navigation, and system-style applications. Built with React and modern frontend technologies, the project demonstrates component-based architecture, responsive design, and attention to user experience.",
   },
 ];
