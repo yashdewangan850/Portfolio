@@ -9,7 +9,8 @@ import { SiteHeader } from "@/components/site-header";
 import { AboutSection } from "@/components/sections/about-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import { HeroSection } from "@/components/sections/hero-section";
-import { ProjectList } from "@/components/sections/project-list";
+// import { ProjectList } from "@/components/sections/project-list";
+import ProjectSection from "@/components/sections/project-list";
 import { SignalsSection } from "@/components/sections/signals-section";
 import { Footer } from "@/components/site-footer";
 import { SkillsSection } from "@/components/sections/skills-section";
@@ -35,7 +36,8 @@ export default function Home() {
     <main>
       <SiteHeader />
       <HeroSection />
-      <ProjectList />
+      {/* <ProjectList /> */}
+      <ProjectSection />
       <AboutSection />
       <SkillsSection />
       <TimelineSection />

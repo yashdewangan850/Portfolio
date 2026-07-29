@@ -1,0 +1,147 @@
+/* ==========================================
+   LAYOUT
+========================================== */
+
+:root {
+  --container-width: 1280px;
+  --container-padding: 24px;
+  --section-spacing: 120px;
+}
+
+/* Main Container */
+
+.shell {
+  width: min(
+    var(--container-width),
+    calc(100% - (var(--container-padding) * 2))
+  );
+
+  margin-inline: auto;
+}
+
+/* Section */
+
+.section {
+  position: relative;
+  padding-block: var(--section-spacing);
+}
+
+/* Section Heading */
+
+.section-heading {
+  max-width: 760px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+
+.section-tag {
+  display: inline-block;
+  margin-bottom: 16px;
+
+  color: #818cf8;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.section-heading h2 span {
+  color: #818cf8;
+}
+
+.section-intro {
+  margin-top: 20px;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* Grid */
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Flex */
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+
+  :root {
+    --section-spacing: 90px;
+  }
+
+  .grid-4,
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  :root {
+    --container-padding: 20px;
+    --section-spacing: 80px;
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    margin-bottom: 60px;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  :root {
+    --container-padding: 16px;
+    --section-spacing: 70px;
+  }
+
+}

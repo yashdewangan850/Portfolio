@@ -14,7 +14,7 @@ import {
 import { motion } from "framer-motion";
 
 const links = [
-  { label: "Home", href: "#hero" },
+  { label: "Home", href: "#" },
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
@@ -109,7 +109,7 @@ export function Footer() {
           </p>
 
           <motion.a
-            href="#hero"
+            href="#"
             whileHover={{
               y: -4,
             }}

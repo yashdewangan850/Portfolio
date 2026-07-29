@@ -10,19 +10,11 @@ export const projects = [
     status: "Completed",
     image: "/projects/ai-mock-interview.png",
 
-    copy:
-      "An intelligent interview preparation platform powered by AI, offering role-specific mock interviews, instant feedback, and performance insights.",
+    copy: "An intelligent interview preparation platform powered by AI, offering role-specific mock interviews, instant feedback, and performance insights.",
 
-    tags: [
-      "Next.js",
-      "React",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Gemini AI",
-    ],
+    tags: ["Next.js", "React", "Node.js", "Express.js", "MongoDB", "Gemini AI"],
 
-    tint: "blue",
+    tint: "lime",
 
     github: "https://github.com/yashdewangan850/Ai_Interview",
     live: "",
@@ -42,16 +34,9 @@ export const projects = [
     status: "Completed",
     image: "/projects/gps-attendance.png",
 
-    copy:
-      "GPS-based attendance platform that allows employees to check in only from authorized locations.",
+    copy: "GPS-based attendance platform that allows employees to check in only from authorized locations.",
 
-    tags: [
-      "React",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Google Maps API",
-    ],
+    tags: ["React", "Node.js", "Express.js", "MongoDB", "Google Maps API"],
 
     tint: "lime",
 
@@ -73,18 +58,11 @@ export const projects = [
     status: "Completed",
     image: "/projects/macos-clone.png",
 
-    copy:
-      "A browser-based macOS simulation featuring Finder, Dock, window management, and interactive applications.",
+    copy: "A browser-based macOS simulation featuring Finder, Dock, window management, and interactive applications.",
 
-    tags: [
-      "React",
-      "JavaScript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "UI/UX",
-    ],
+    tags: ["React", "JavaScript", "Tailwind CSS", "Framer Motion", "UI/UX"],
 
-    tint: "coral",
+    tint: "lime",
 
     github: "https://github.com/yashdewangan850/Mac-Project",
     live: "https://web-besd-mac-os.netlify.app/",
@@ -114,76 +92,65 @@ export const skillGroups = [
     title: "Backend",
     icon: "⚙️",
     description: "Developing scalable APIs and server-side applications.",
-    skills: [
-      "Node.js",
-      "Express.js",
-      "REST API",
-      "JWT Authentication",
-    ],
+    skills: ["Node.js", "Express.js", "REST API", "JWT Authentication"],
   },
 
   {
     title: "Database",
     icon: "🗄️",
     description: "Designing efficient and secure database architectures.",
-    skills: [
-      "MongoDB",
-      "Mongoose",
-    ],
+    skills: ["MongoDB", "Mongoose"],
   },
 
   {
     title: "Tools",
     icon: "🛠️",
     description: "Development workflow, collaboration and deployment tools.",
-    skills: [
-      "Git",
-      "GitHub",
-      "Docker",
-      "Postman",
-      "VS Code",
-    ],
+    skills: ["Git", "GitHub", "Docker", "Postman", "VS Code"],
   },
 
   {
     title: "Cloud",
     icon: "☁️",
     description: "Deploying and managing modern web applications.",
-    skills: [
-      "AWS",
-      "Netlify",
-      "Vercel",
-    ],
+    skills: ["AWS", "Netlify", "Vercel"],
   },
 ];
 export const timeline = [
   {
-    year: "2020",
-    title: "Started B.Tech in Computer Science",
-    company: "Government Engineering College",
+    year: "2022",
+    title: "B.Tech Computer Science",
+    company: "Government Engineering College, Ambikapur",
     description:
-      "Started my Computer Science journey while building a strong foundation in programming, data structures and software development.",
+      "Started my B.Tech in Computer Science & Engineering, building strong fundamentals in programming, algorithms, databases, and software engineering.",
   },
   {
     year: "2024",
-    title: "Web Development Training",
+    title: "Frontend Development Training",
     company: "Logixhunt, Bhilai",
     description:
-      "Completed practical training in HTML, CSS, JavaScript, React and responsive web development while working on real-world projects.",
+      "Completed professional training in HTML, CSS, JavaScript, React.js, Bootstrap, and responsive web development while building real-world projects.",
   },
   {
     year: "2025",
-    title: "Full Stack MERN Development",
-    company: "Personal Projects",
+    title: "Full Stack MERN Developer",
+    company: "Personal & Academic Projects",
     description:
-      "Built AI Interview Platform, GPS Attendance System and several full-stack MERN applications using React, Node.js and MongoDB.",
+      "Developed multiple full-stack applications using React.js, Node.js, Express.js, and MongoDB, focusing on scalable architecture, REST APIs, and modern UI/UX.",
   },
   {
     year: "2026",
-    title: "B.Tech Graduate",
-    company: "Open to Opportunities",
+    title: "AI & Full Stack Projects",
+    company: "Independent Development",
     description:
-      "Graduated in Computer Science and actively looking for Software Engineer, Full Stack Developer and MERN Developer roles.",
+      "Built an AI Mock Interview Platform, GPS Attendance System, and macOS Portfolio Clone by integrating Gemini AI, authentication, dashboards, and responsive interfaces.",
+  },
+  {
+    year: "Present",
+    title: "Open to Software Roles",
+    company: "Actively Seeking Opportunities",
+    description:
+      "Looking for Software Engineer, Full Stack Developer, MERN Stack Developer, or Frontend Developer roles where I can contribute to impactful products and continue growing as an engineer.",
   },
 ];
 export const notes = [
