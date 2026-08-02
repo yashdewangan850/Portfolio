@@ -153,10 +153,5 @@ export const timeline = [
       "Looking for Software Engineer, Full Stack Developer, MERN Stack Developer, or Frontend Developer roles where I can contribute to impactful products and continue growing as an engineer.",
   },
 ];
-export const notes = [
-  {
-    slug: "building-with-intention",
-    title: "Building with intention",
-    excerpt: "How careful product choices make interfaces feel inevitable.",
-  },
-];
+
+

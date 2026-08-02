@@ -23,6 +23,7 @@ const technologies = [
   "Express.js",
   "MongoDB",
   "Tailwind CSS",
+  "SCSS",
   "REST API",
   "JWT",
   "Git",

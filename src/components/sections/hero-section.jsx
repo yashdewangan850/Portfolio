@@ -78,7 +78,7 @@ export function HeroSection() {
           </a>
 
           <a
-            href="/Yash_Kumar_Dewangan_Resume.pdf"
+            href="/Yash_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="secondary-btn"
@@ -127,7 +127,7 @@ export function HeroSection() {
           <span>FULL STACK</span>
           <span>◆</span>
           <span>MERN</span>
-          <span>◆</span>
+          {/* <span>◆</span> */}
           <span>AI</span>
         </motion.div>
       </div>
