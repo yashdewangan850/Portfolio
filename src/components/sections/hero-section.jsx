@@ -73,7 +73,7 @@ export function HeroSection() {
             duration: 0.8,
           }}
         >
-          <a href="#work" className="primary-btn">
+          <a href="#projects" className="primary-btn">
             View Projects
           </a>
 
