@@ -17,7 +17,7 @@ export const projects = [
     tint: "lime",
 
     github: "https://github.com/yashdewangan850/Ai_Interview",
-    live: "",
+    // live: "https://perplexity-2-1cpi.onrender.com",
 
     overview:
       "AI Mock Interview Platform is a modern full-stack application designed to make interview preparation more effective through artificial intelligence. It enables users to practice role-specific interviews, receive AI-generated feedback, and monitor their progress over time.",
@@ -25,26 +25,26 @@ export const projects = [
 
   {
     number: "02",
-    slug: "gps-attendance",
-    title: "GPS Attendance System",
-    type: "Location-aware Workflow",
-    year: "2024",
+    slug: "Perplity",
+    title: "Perplity",
+    type: "AI-Powered Search Engine",
+    year: "2026",
 
     featured: false,
     status: "Completed",
-    image: "/projects/gps-attendance.png",
+    image: "/projects/perplity.png",
 
-    copy: "GPS-based attendance platform that allows employees to check in only from authorized locations.",
+    copy: "A cutting-edge AI-powered search engine that provides more accurate and relevant results than traditional search methods.",
 
-    tags: ["React", "Node.js", "Express.js", "MongoDB", "Google Maps API"],
+    tags: ["React", "Node.js", "Express.js", "MongoDB", "Gemini AI"],
 
     tint: "lime",
 
-    github: "",
-    live: "",
+    github: "https://github.com/yashdewangan850/Perplity",
+    live: "https://perplexity-2-1cpi.onrender.com",
 
     overview:
-      "GPS Attendance System streamlines attendance management using real-time geolocation and location verification with a responsive user experience.",
+      "Perplity is an innovative AI-powered search engine that leverages the capabilities of Gemini AI to deliver more precise and contextually relevant search results compared to conventional search methods.",
   },
 
   {
@@ -153,5 +153,3 @@ export const timeline = [
       "Looking for Software Engineer, Full Stack Developer, MERN Stack Developer, or Frontend Developer roles where I can contribute to impactful products and continue growing as an engineer.",
   },
 ];
-
-
