@@ -1,260 +1,652 @@
-/* ===========================
+/* ======================================================
    PROJECTS SECTION
-=========================== */
+====================================================== */
 
-.projects{
-    padding:120px 0;
+.projects {
+  position: relative;
+  padding: 120px 0;
 }
 
-.projects-grid{
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:32px;
-    margin-top:70px;
+/* ======================================================
+   PROJECT GRID
+====================================================== */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 60px;
+  align-items: stretch;
 }
 
-/* ===========================
-   CARD
-=========================== */
+/* ======================================================
+   PROJECT CARD
+====================================================== */
 
-.project-card{
-    position:relative;
-    display:flex;
-    flex-direction:column;
-    overflow:hidden;
+.project-card {
+  position: relative;
 
-    background:#0f172a;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:24px;
+  display: flex;
+  flex-direction: column;
 
-    transition:
-        transform .35s ease,
-        border-color .35s ease,
-        box-shadow .35s ease;
+  min-width: 0;
+  height: 100%;
 
-    height:100%;
+  overflow: hidden;
+
+  background: #0f172a;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
-.project-card:hover{
-    transform:translateY(-10px);
-    border-color:#3559ed88;
-    box-shadow:0 25px 60px rgba(53,89,237,.18);
+/* Force every project color to stay dark */
+
+.project-card.blue,
+.project-card.lime,
+.project-card.emerald,
+.project-card.coral,
+.project-card.purple,
+.project-card.featured {
+  background: #0f172a;
 }
 
-/* ===========================
-   IMAGE
-=========================== */
+/* Hover */
 
-.project-image{
-    position:relative;
-    width:100%;
-    height:230px;
-    overflow:hidden;
+.project-card:hover {
+  transform: translateY(-10px);
+
+  border-color: rgba(53, 89, 237, 0.5);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.35),
+    0 0 35px rgba(53, 89, 237, 0.12);
 }
 
-.project-image img{
-    object-fit:cover;
-    transition:transform .5s ease;
+/* ======================================================
+   SPOTLIGHT
+====================================================== */
+
+.spotlight {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 2;
+
+  background:
+    radial-gradient(
+      300px circle at var(--x) var(--y),
+      rgba(53, 89, 237, 0.16),
+      transparent 65%
+    );
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
 }
 
-.project-card:hover img{
-    transform:scale(1.08);
+.project-card:hover .spotlight {
+  opacity: 1;
 }
 
-/* ===========================
-   CONTENT
-=========================== */
+/* ======================================================
+   PROJECT IMAGE
+====================================================== */
 
-.project-content{
-    display:flex;
-    flex-direction:column;
-    flex:1;
-    padding:28px;
+.project-image {
+  position: relative;
+
+  width: 100%;
+
+  height: 220px;
+
+  overflow: hidden;
+
+  background: #080d17;
 }
 
-.project-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:18px;
+.project-image img,
+.project-image .image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.4s ease;
 }
 
-.project-number{
-    color:#3559ed;
-    font-weight:700;
-    font-size:14px;
+.project-card:hover .project-image img,
+.project-card:hover .project-image .image {
+  transform: scale(1.06);
+
+  filter: brightness(1.08);
 }
 
-.status{
-    padding:6px 12px;
-    border-radius:50px;
-    font-size:12px;
-    font-weight:600;
-    background:#1f2937;
+/* ======================================================
+   PROJECT CONTENT
+====================================================== */
+
+.project-content {
+  position: relative;
+
+  z-index: 3;
+
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+
+  padding: 26px;
 }
 
-.status.completed{
-    background:#16a34a22;
-    color:#4ade80;
+/* ======================================================
+   TOP
+====================================================== */
+
+.project-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 18px;
 }
+
+.project-number {
+  color: #4f70ff;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+/* ======================================================
+   STATUS
+====================================================== */
+
+.status {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 7px 13px;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  color: #cbd5e1;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.status.completed {
+  background: rgba(34, 197, 94, 0.12);
+
+  color: #4ade80;
+
+  border-color: rgba(74, 222, 128, 0.18);
+}
+
+/* ======================================================
+   PROJECT TYPE
+====================================================== */
+
+.project-type {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+/* ======================================================
+   TITLE
+====================================================== */
 
 .project-title,
-.project-content h3{
-    font-size:28px;
-    line-height:1.2;
-    margin-bottom:14px;
-    font-weight:700;
+.project-content h3 {
+  margin: 0 0 14px;
+
+  color: #f8fafc;
+
+  font-size: 27px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  letter-spacing: -0.02em;
 }
 
-.project-content p{
-    color:#94a3b8;
-    line-height:1.7;
-    margin-bottom:24px;
+/* ======================================================
+   DESCRIPTION
+====================================================== */
+
+.project-content p {
+  margin: 0 0 22px;
+
+  color: #94a3b8;
+
+  font-size: 15px;
+
+  line-height: 1.75;
 }
 
-/* ===========================
+/* ======================================================
    TAGS
-=========================== */
+====================================================== */
 
-.tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-bottom:28px;
+.tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-bottom: 26px;
 }
 
-.tags span{
-    padding:8px 14px;
-    border-radius:999px;
-    background:#1e293b;
-    color:#cbd5e1;
-    font-size:13px;
+.tags span {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 7px 12px;
+
+  border-radius: 999px;
+
+  background: #172033;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  color: #cbd5e1;
+
+  font-size: 12px;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
 }
 
-/* ===========================
-   BUTTONS
-=========================== */
+.tags span:hover {
+  background: #1e293b;
 
-.project-footer{
-    margin-top:auto;
+  border-color: rgba(255, 255, 255, 0.14);
+
+  transform: translateY(-2px);
 }
 
-.project-links{
-    display:flex;
-    gap:12px;
-    margin-bottom:18px;
+/* ======================================================
+   FOOTER
+====================================================== */
+
+.project-footer {
+  margin-top: auto;
+
+  padding-top: 4px;
 }
 
-.project-btn{
-    display:flex;
-    align-items:center;
-    gap:8px;
+/* ======================================================
+   PROJECT LINKS
+====================================================== */
 
-    padding:10px 16px;
+.project-links {
+  display: flex;
 
-    border-radius:12px;
+  flex-wrap: wrap;
 
-    text-decoration:none;
+  gap: 10px;
 
-    color:white;
-
-    background:#1e293b;
-
-    transition:.3s;
+  margin-bottom: 14px;
 }
 
-.project-btn:hover{
-    background:#3559ed;
+.project-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  min-height: 42px;
+
+  padding: 9px 15px;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: #172033;
+
+  color: #f8fafc;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.project-arrow{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:8px;
+.project-btn:hover {
+  transform: translateY(-3px);
 
-    width:100%;
+  background: #1e293b;
 
-    padding:12px;
+  border-color: rgba(255, 255, 255, 0.16);
 
-    border-radius:14px;
-
-    text-decoration:none;
-
-    color:white;
-
-    background:#3559ed;
-
-    transition:.3s;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-.project-arrow:hover{
-    background:#1d4ed8;
-    transform:translateY(-3px);
+/* ======================================================
+   CASE STUDY BUTTON
+====================================================== */
+
+.project-arrow {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  width: 100%;
+
+  min-height: 44px;
+
+  padding: 11px 16px;
+
+  border-radius: 13px;
+
+  background: #3559ed;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-/* ===========================
-   SPOTLIGHT
-=========================== */
+.project-arrow:hover {
+  transform: translateY(-3px);
 
-.spotlight{
-    position:absolute;
-    inset:0;
-    pointer-events:none;
+  background: #2948d6;
 
-    background:
-        radial-gradient(
-            300px circle at var(--x) var(--y),
-            rgba(53,89,237,.18),
-            transparent 60%
-        );
-
-    opacity:0;
-
-    transition:.3s;
+  box-shadow:
+    0 10px 25px rgba(53, 89, 237, 0.28);
 }
 
-.project-card:hover .spotlight{
-    opacity:1;
+/* ======================================================
+   FEATURED CARD
+====================================================== */
+
+.project-card.featured {
+  border-color: rgba(255, 255, 255, 0.1);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.22);
 }
 
-/* ===========================
+/* ======================================================
    TABLET
-=========================== */
+====================================================== */
 
-@media (max-width:1024px){
+@media (max-width: 1100px) {
+  .projects {
+    padding: 100px 0;
+  }
 
-.projects-grid{
-    grid-template-columns:repeat(2,1fr);
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+
+    margin-top: 50px;
+  }
+
+  .project-image {
+    height: 210px;
+  }
+
+  .project-content {
+    padding: 24px;
+  }
+
+  .project-content h3 {
+    font-size: 24px;
+  }
 }
 
-}
-
-/* ===========================
+/* ======================================================
    MOBILE
-=========================== */
+====================================================== */
 
-@media (max-width:768px){
+@media (max-width: 768px) {
+  .projects {
+    padding: 80px 0;
+  }
 
-.projects-grid{
-    grid-template-columns:1fr;
+  .projects-grid {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+
+    margin-top: 40px;
+  }
+
+  .project-card {
+    border-radius: 20px;
+  }
+
+  .project-image {
+    height: 210px;
+  }
+
+  .project-content {
+    padding: 22px;
+  }
+
+  .project-content h3 {
+    font-size: 23px;
+  }
+
+  .project-content p {
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
+
+  .project-links {
+    flex-direction: row;
+  }
+
+  .project-btn {
+    flex: 1;
+  }
+
+  .project-arrow {
+    width: 100%;
+  }
 }
 
-.project-content{
-    padding:22px;
+/* ======================================================
+   SMALL MOBILE
+====================================================== */
+
+@media (max-width: 480px) {
+  .projects {
+    padding: 65px 0;
+  }
+
+  .projects-grid {
+    gap: 18px;
+  }
+
+  .project-image {
+    height: 185px;
+  }
+
+  .project-content {
+    padding: 18px;
+  }
+
+  .project-top {
+    margin-bottom: 14px;
+  }
+
+  .project-number {
+    font-size: 12px;
+  }
+
+  .status {
+    padding: 6px 10px;
+
+    font-size: 10px;
+  }
+
+  .project-type {
+    font-size: 10px;
+  }
+
+  .project-content h3 {
+    font-size: 21px;
+
+    margin-bottom: 10px;
+  }
+
+  .project-content p {
+    font-size: 13px;
+
+    margin-bottom: 18px;
+  }
+
+  .tags {
+    gap: 6px;
+
+    margin-bottom: 20px;
+  }
+
+  .tags span {
+    padding: 6px 9px;
+
+    font-size: 11px;
+  }
+
+  .project-links {
+    gap: 8px;
+  }
+
+  .project-btn {
+    min-height: 40px;
+
+    padding: 8px 10px;
+
+    font-size: 12px;
+  }
+
+  .project-arrow {
+    min-height: 42px;
+
+    font-size: 12px;
+  }
 }
 
-.project-content h3{
-    font-size:24px;
+/* ======================================================
+   EXTRA SMALL
+====================================================== */
+
+@media (max-width: 360px) {
+  .project-image {
+    height: 165px;
+  }
+
+  .project-content {
+    padding: 16px;
+  }
+
+  .project-content h3 {
+    font-size: 19px;
+  }
+
+  .project-links {
+    flex-direction: column;
+  }
+
+  .project-btn {
+    width: 100%;
+  }
 }
 
-.project-links{
-    flex-direction:column;
-}
+/* ======================================================
+   REDUCED MOTION
+====================================================== */
 
-.project-btn,
-.project-arrow{
-    width:100%;
-}
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-image img,
+  .project-btn,
+  .project-arrow,
+  .tags span {
+    transition: none;
+  }
 
+  .project-card:hover,
+  .project-card:hover img,
+  .project-btn:hover,
+  .project-arrow:hover,
+  .tags span:hover {
+    transform: none;
+  }
 }

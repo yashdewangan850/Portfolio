@@ -12,7 +12,7 @@ export const projects = [
 
     copy: "An intelligent interview preparation platform powered by AI, offering role-specific mock interviews, instant feedback, and performance insights.",
 
-    tags: ["Next.js", "React", "Node.js", "Express.js", "MongoDB", "Gemini AI"],
+    tags: ["Next.js", "React", "Express.js", "MongoDB", "Gemini AI"],
 
     tint: "lime",
 
@@ -32,11 +32,11 @@ export const projects = [
 
     featured: false,
     status: "Completed",
-    image: "/projects/perplity.png",
+    image: "/projects/perplexity.png",
 
     copy: "A cutting-edge AI-powered search engine that provides more accurate and relevant results than traditional search methods.",
 
-    tags: ["React", "Node.js", "Express.js", "MongoDB", "Gemini AI"],
+    tags: ["React", "Next.js", "Node.js", "Express.js", "MongoDB", "Gemini AI"],
 
     tint: "lime",
 
