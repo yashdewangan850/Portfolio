@@ -201,7 +201,7 @@ yashdewangan850@gmail.com
 [https://linkedin.com/in/YOUR_USERNAME](https://www.linkedin.com/in/yash-kumar-dewangan-5b0607266/)
 
 🌐 **Portfolio**
-https://your-portfolio.vercel.app
+https://https://portfolio-blush-seven-zug9vynk0o.vercel.app/
 
 ---
 
