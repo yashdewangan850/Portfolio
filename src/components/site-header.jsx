@@ -61,7 +61,7 @@ export function SiteHeader() {
       },
       {
         threshold: 0.5,
-      }
+      },
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -92,7 +92,6 @@ export function SiteHeader() {
       transition={{ duration: 0.7 }}
     >
       <div className="nav-inner">
-
         {/* Logo */}
 
         <Link href="/" className="brand">
@@ -117,7 +116,6 @@ export function SiteHeader() {
         {/* Right Side */}
 
         <div className="nav-actions">
-
           <a
             href="/Yash_Kumar_Dewangan_Resume.pdf"
             target="_blank"
@@ -133,7 +131,6 @@ export function SiteHeader() {
             aria-label="Theme"
           >
             <AnimatePresence mode="wait">
-
               <motion.div
                 key={dark ? "sun" : "moon"}
                 initial={{ rotate: -90, opacity: 0 }}
@@ -143,7 +140,6 @@ export function SiteHeader() {
               >
                 {dark ? <Sun size={18} /> : <Moon size={18} />}
               </motion.div>
-
             </AnimatePresence>
           </button>
 
@@ -154,17 +150,13 @@ export function SiteHeader() {
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
-
         </div>
-
       </div>
 
       {/* Mobile Menu */}
 
       <AnimatePresence>
-
         {menuOpen && (
-
           <motion.div
             className="mobile-menu"
             initial={{ opacity: 0, y: -25 }}
@@ -192,13 +184,9 @@ export function SiteHeader() {
             >
               Resume
             </a>
-
           </motion.div>
-
         )}
-
       </AnimatePresence>
-
     </motion.header>
   );
 }

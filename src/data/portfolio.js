@@ -71,6 +71,10 @@ export const projects = [
       "A modern web application recreating the macOS desktop experience with draggable windows, desktop icons, Finder, Dock, and polished animations.",
   },
 ];
+
+
+// SKILLS //
+
 export const skillGroups = [
   {
     title: "Frontend",

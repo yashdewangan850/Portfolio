@@ -78,7 +78,7 @@ export function HeroSection() {
           </a>
 
           <a
-            href="/Yash_Resume.pdf"
+            href="/Yash_Kumar_Dewangan_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="secondary-btn"
