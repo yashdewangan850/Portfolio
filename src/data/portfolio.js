@@ -17,7 +17,7 @@ export const projects = [
     tint: "lime",
 
     github: "https://github.com/yashdewangan850/Ai_Interview",
-    // live: "https://perplexity-2-1cpi.onrender.com",
+    live: "https://ai-interview-1-zjkp.onrender.com",
 
     overview:
       "AI Mock Interview Platform is a modern full-stack application designed to make interview preparation more effective through artificial intelligence. It enables users to practice role-specific interviews, receive AI-generated feedback, and monitor their progress over time.",
