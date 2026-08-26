@@ -10,8 +10,7 @@ const signals = [
     title: (
       <>
         Open Source
-        <br />
-        & Projects.
+        <br />& Projects.
       </>
     ),
     copy: "Browse my GitHub repositories featuring full-stack MERN applications, AI-powered projects, REST APIs, and modern web development solutions that demonstrate my technical expertise and continuous learning.",
@@ -106,7 +105,7 @@ export function SignalsSection() {
 
               {signal.external ? (
                 <motion.a
-                  href={signal.href}
+                  href="#footer"
                   target="_blank"
                   rel="noreferrer"
                   whileHover={{
@@ -115,6 +114,7 @@ export function SignalsSection() {
                 >
                   {signal.cta} <ArrowUpRight size={15} />
                 </motion.a>
+
               ) : signal.download ? (
                 <motion.a
                   href={signal.href}

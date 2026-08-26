@@ -106,7 +106,7 @@ export function HeroSection() {
             whileTap={{
               scale: 0.95,
             }}
-            href="#work"
+            href="#journey"
             className="circle-link"
             aria-label="Scroll to projects"
           >
