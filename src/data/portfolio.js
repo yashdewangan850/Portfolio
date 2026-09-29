@@ -56,7 +56,7 @@ export const projects = [
 
   featured: true,
   status: "Completed",
-  image: "macos-clone.png",
+  image: "/projects/macos-clone.png",
 
   copy:
     "A full-stack browser-based operating system simulator that recreates a desktop environment with draggable windows, desktop icons, productivity applications, authentication, and data synchronization.",
