@@ -48,28 +48,41 @@ export const projects = [
   },
 
   {
-    number: "03",
-    slug: "mac-os",
-    title: "macOS Clone",
-    type: "Operating System Simulation",
-    year: "2025",
+  number: "03",
+  slug: "WEBOS",
+  title: "WebOS",
+  type: "Browser-Based Operating System Simulator",
+  year: "2026",
 
-    featured: true,
-    status: "Completed",
-    image: "/projects/macos-clone.png",
+  featured: true,
+  status: "Completed",
+  image: "/projects/webos.png",
 
-    copy: "A browser-based macOS simulation featuring Finder, Dock, window management, and interactive applications.",
+  copy:
+    "A full-stack browser-based operating system simulator that recreates a desktop environment with draggable windows, desktop icons, productivity applications, authentication, and data synchronization.",
 
-    tags: ["React", "JavaScript", "Tailwind CSS", "Framer Motion", "UI/UX"],
+  tags: [
+    "React",
+    "JavaScript",
+    "Tailwind CSS",
+    "React RND",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Mongoose",
+    "JWT",
+    "REST API"
+  ],
 
-    tint: "lime",
+  tint: "blue",
 
-    github: "https://github.com/yashdewangan850/Mac-Project",
-    live: "https://web-besd-mac-os.netlify.app/",
+  github: "https://github.com/yashdewangan850/OS",
 
-    overview:
-      "A modern web application recreating the macOS desktop experience with draggable windows, desktop icons, Finder, Dock, and polished animations.",
-  },
+  live: "https://os-1-s8mf.onrender.com/",
+
+  overview:
+    "WebOS is a full-stack browser-based operating system simulator designed to recreate a desktop operating system experience directly in the browser. It features draggable and resizable application windows, desktop icons, Start Menu, taskbar, window snapping, themes, persistent settings, and multiple built-in applications including File Manager, Notes, Terminal, Browser, Calculator, Settings, Trash, Calendar, Music, Image Viewer, Notifications, Global Search, and AI Assistant. The frontend is built with React and Tailwind CSS, while the backend uses Node.js, Express.js, MongoDB, Mongoose, JWT authentication, and REST APIs for authentication and data synchronization."
+}
 ];
 
 
