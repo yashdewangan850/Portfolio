@@ -1,93 +1,152 @@
 "use client";
 
-import { skillGroups } from "@/data/portfolio";
+import { ArrowUpRight, Database, Globe, Server, Wrench } from "lucide-react";
 import { motion } from "framer-motion";
 import { FadeIn } from "@/components/motion/fade-in";
+import "../styles/skills.css";
 
-export function SkillsSection() {
+const skillGroups = [
+  {
+    number: "01",
+    icon: Globe,
+    title: "Frontend",
+    description: "Building responsive and interactive user interfaces.",
+    skills: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React.js",
+      "Next.js",
+      "Tailwind CSS",
+      "Bootstrap",
+    ],
+  },
+  {
+    number: "02",
+    icon: Server,
+    title: "Backend",
+    description: "Developing APIs and server-side applications.",
+    skills: [
+      "Node.js",
+      "Express.js",
+      "REST API",
+      "JWT",
+      "Authentication",
+      "Mongoose",
+    ],
+  },
+  {
+    number: "03",
+    icon: Database,
+    title: "Database",
+    description: "Working with structured and NoSQL data systems.",
+    skills: [
+      "MongoDB",
+      "MySQL",
+      "SQLite",
+      "Database Design",
+    ],
+  },
+  {
+    number: "04",
+    icon: Wrench,
+    title: "Tools & Others",
+    description: "Tools and technologies I use throughout development.",
+    skills: [
+      "Git",
+      "GitHub",
+      "Postman",
+      "Docker",
+      "AWS",
+      "Gemini API",
+    ],
+  },
+];
+
+export default function SkillsSection() {
   return (
-    <section className="shell skills section" id="skills">
+    <section id="skills" className="new-skills section shell">
       <FadeIn>
-        <div className="section-top">
-          <span className="kicker">03 / Technical Expertise</span>
+        <div className="new-skills-top">
+          <div className="new-skills-index">
+            <span>04</span>
+            <div />
+            <span>TECHNICAL SKILLS</span>
+          </div>
 
-          <motion.h2
-            className="display"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            Technologies I use to build modern web experiences.
-          </motion.h2>
-
-          {/* <motion.p
-            className="section-description"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            My development workflow spans frontend engineering,
-            backend architecture, databases, cloud deployment,
-            and modern developer tools.
-          </motion.p> */}
+          <span className="new-skills-kicker">
+            TOOLS / TECHNOLOGIES / STACK
+          </span>
         </div>
       </FadeIn>
 
-      <div className="skills-grid">
-        {skillGroups.map((group, index) => (
-          <FadeIn key={group.title}>
-            <motion.div
-              className="skill-card"
-              whileHover={{
-                y: -10,
-                transition: {
-                  duration: 0.25,
-                },
-              }}
-            >
-              <div className="skill-card-header">
-                <span className="skill-icon">
-                  {group.icon}
-                </span>
+      <div className="new-skills-heading">
+        <FadeIn>
+          <h2>
+            Tools I use
+            <br />
+            to <span>build things.</span>
+          </h2>
+        </FadeIn>
 
-                <div>
+        <FadeIn delay={0.1}>
+          <p>
+            A practical stack built around modern JavaScript development,
+            full-stack applications and AI-powered features.
+          </p>
+        </FadeIn>
+      </div>
+
+      <div className="new-skills-grid">
+        {skillGroups.map((group, index) => {
+          const Icon = group.icon;
+
+          return (
+            <FadeIn key={group.number} delay={index * 0.08}>
+              <motion.article
+                className="new-skill-card"
+                whileHover={{ y: -5 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="new-skill-card-top">
+                  <span>{group.number}</span>
+                  <Icon size={20} strokeWidth={1.5} />
+                </div>
+
+                <div className="new-skill-card-content">
                   <h3>{group.title}</h3>
                   <p>{group.description}</p>
                 </div>
-              </div>
 
-              <div className="skill-list">
-                {group.skills.map((skill) => (
-                  <motion.span
-                    key={skill}
-                    className="skill-pill"
-                    whileHover={{
-                      scale: 1.06,
-                    }}
-                    whileTap={{
-                      scale: 0.95,
-                    }}
-                  >
-                    {skill}
-                  </motion.span>
-                ))}
-              </div>
-
-              <div className="skill-footer">
-                <span>
-                  {group.skills.length} Technologies
-                </span>
-
-                <span className="skill-number">
-                  0{index + 1}
-                </span>
-              </div>
-            </motion.div>
-          </FadeIn>
-        ))}
+                <div className="new-skill-list">
+                  {group.skills.map((skill) => (
+                    <span key={skill}>{skill}</span>
+                  ))}
+                </div>
+              </motion.article>
+            </FadeIn>
+          );
+        })}
       </div>
+
+      <FadeIn>
+        <div className="new-skills-bottom">
+          <div>
+            <span className="new-skills-bottom-label">
+              CURRENT FOCUS
+            </span>
+
+            <strong>
+              Full Stack Development + AI
+            </strong>
+          </div>
+
+          <a href="#projects">
+            Explore my projects
+            <ArrowUpRight size={16} />
+          </a>
+        </div>
+      </FadeIn>
     </section>
   );
 }

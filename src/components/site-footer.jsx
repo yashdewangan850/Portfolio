@@ -1,89 +1,100 @@
 "use client";
 
-import { ArrowUp, Mail, Heart } from "lucide-react";
-
+import { ArrowUp, ArrowUpRight } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-
 import { motion } from "framer-motion";
-
-const links = [
-  { label: "Home", href: "#" },
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#skills" },
-  { label: "Journey", href: "#journey" },
-  { label: "Contact", href: "#contact" },
-];
+import "./styles/footer.css";
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="footer">
-      <div className="shell">
-        <div className="footer-top">
-          <div className="footer-brand">
-            <span className="footer-logo">YD</span>
+    <footer className="new-footer">
+      <div className="new-footer-inner shell">
+        <div className="new-footer-top">
+          <motion.a
+            href="#home"
+            className="new-footer-brand"
+            whileHover={{ y: -2 }}
+          >
+            YASH<span>.</span>
+          </motion.a>
 
-            <h3>Yash Kumar Dewangan</h3>
+          <span className="new-footer-status">
+            <i />
+            AVAILABLE FOR OPPORTUNITIES
+          </span>
+        </div>
 
-            <p>
-              Full Stack MERN Developer passionate about building modern,
-              scalable and user-friendly web applications.
-            </p>
+        <div className="new-footer-main">
+          <div className="new-footer-heading">
+            <span>SOFTWARE DEVELOPER</span>
+
+            <h2>
+              Build.
+              <br />
+              <em>Ship. Learn.</em>
+            </h2>
           </div>
 
-          <nav className="footer-nav">
-            <h4>Navigation</h4>
+          <div className="new-footer-links">
+            <div>
+              <span className="new-footer-label">
+                NAVIGATION
+              </span>
 
-            {links.map((link) => (
-              <a key={link.label} href={link.href}>
-                {link.label}
+              <a href="#home">Home</a>
+              <a href="#projects">Projects</a>
+              <a href="#about">About</a>
+              <a href="#skills">Skills</a>
+              <a href="#journey">Journey</a>
+              <a href="#contact">Contact</a>
+            </div>
+
+            <div>
+              <span className="new-footer-label">
+                CONNECT
+              </span>
+
+              <a
+                href="https://github.com/yashdewangan850"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+                <ArrowUpRight size={13} />
               </a>
-            ))}
-          </nav>
 
-          <div className="footer-contact">
-            <h4>Connect</h4>
+              <a
+                href="https://www.linkedin.com/in/yash-kumar-dewangan-5b0607266/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+                <ArrowUpRight size={13} />
+              </a>
 
-            <a href="mailto:yashdewangan850@gmail.com">
-              <Mail size={18} />
-              Email
-            </a>
-
-            <a
-              href="https://github.com/yashdewangan850"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaGithub />
-              GitHub
-            </a>
-
-            <a
-              href="https://linkedin.com/in/yash-kumar-dewangan"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaLinkedin />
-              LinkedIn
-            </a>
+              <a href="mailto:yashdewangan850@gmail.com">
+                Email
+                <ArrowUpRight size={13} />
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className="footer-bottom">
-          <p>
-            © {new Date().getFullYear()} Yash Kumar Dewangan. Built with
-            Next.js, React & Framer Motion.
-          </p>
+        <div className="new-footer-bottom">
+          <span>
+            © {currentYear} YASH KUMAR DEWANGAN
+          </span>
 
-          <motion.a
-            href="#"
-            whileHover={{
-              y: -4,
-            }}
-            className="back-top"
-          >
-            <ArrowUp size={18} />
-          </motion.a>
+          <span>
+            HYDERABAD · INDIA
+          </span>
+
+          <a href="#home" className="new-footer-top-link">
+            BACK TO TOP
+            <ArrowUp size={13} />
+          </a>
         </div>
       </div>
     </footer>

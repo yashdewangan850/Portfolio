@@ -1,6 +1,6 @@
-/* ==========================================
+/* =========================================================
    LAYOUT
-========================================== */
+========================================================= */
 
 :root {
   --container-width: 1280px;
@@ -8,80 +8,126 @@
   --section-spacing: 120px;
 }
 
-/* Main Container */
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
 
 .shell {
-  width: min(
-    var(--container-width),
-    calc(100% - (var(--container-padding) * 2))
-  );
+  width:
+    min(
+      var(--container-width),
+      calc(100% - (var(--container-padding) * 2))
+    );
 
   margin-inline: auto;
 }
 
-/* Section */
+
+/* =========================================================
+   SECTION
+========================================================= */
 
 .section {
   position: relative;
-  padding-block: var(--section-spacing);
+
+  padding-block:
+    var(--section-spacing);
 }
 
-/* Section Heading */
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
 
 .section-heading {
   max-width: 760px;
-  margin: 0 auto 80px;
+
+  margin:
+    0 auto 80px;
+
   text-align: center;
 }
 
 .section-tag {
   display: inline-block;
+
   margin-bottom: 16px;
 
-  color: #818cf8;
+  color:
+    var(--accent-light);
+
   font-size: 14px;
+
   font-weight: 600;
+
   letter-spacing: 2px;
+
   text-transform: uppercase;
 }
 
 .section-heading h2 {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  margin: 0;
+
+  color:
+    var(--foreground);
+
+  font-size:
+    clamp(2.5rem, 6vw, 4.5rem);
+
   line-height: 1.1;
+
   font-weight: 700;
+
+  letter-spacing: -0.04em;
 }
 
 .section-heading h2 span {
-  color: #818cf8;
+  color:
+    var(--accent);
 }
 
 .section-intro {
   margin-top: 20px;
-  color: var(--muted);
+
+  color:
+    var(--muted);
+
   line-height: 1.8;
+
   font-size: 1.05rem;
 }
 
-/* Grid */
+
+/* =========================================================
+   GRID
+========================================================= */
 
 .grid {
   display: grid;
+
   gap: 2rem;
 }
 
 .grid-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
 }
 
 .grid-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
 }
 
 .grid-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
 }
 
-/* Flex */
+
+/* =========================================================
+   FLEX
+========================================================= */
 
 .flex {
   display: flex;
@@ -89,35 +135,42 @@
 
 .flex-center {
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 }
 
 .flex-between {
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 }
 
-/* Responsive */
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
 @media (max-width: 992px) {
-
   :root {
     --section-spacing: 90px;
   }
 
   .grid-4,
   .grid-3 {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
-
 }
 
-@media (max-width: 768px) {
 
+@media (max-width: 768px) {
   :root {
     --container-padding: 20px;
+
     --section-spacing: 80px;
   }
 
@@ -132,16 +185,24 @@
   }
 
   .section-heading h2 {
-    font-size: clamp(2rem, 8vw, 3rem);
+    font-size:
+      clamp(2rem, 8vw, 3rem);
   }
 
+  .section-intro {
+    font-size: 0.98rem;
+  }
 }
 
-@media (max-width: 480px) {
 
+@media (max-width: 480px) {
   :root {
     --container-padding: 16px;
+
     --section-spacing: 70px;
   }
 
+  .section-heading {
+    margin-bottom: 45px;
+  }
 }

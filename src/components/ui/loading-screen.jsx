@@ -15,7 +15,7 @@ export default function LoadingScreen() {
     let value = 0;
 
     const interval = setInterval(() => {
-      value += Math.floor(Math.random() * 8) + 3;
+      value += 5;
 
       if (value >= 100) {
         value = 100;
@@ -32,7 +32,7 @@ export default function LoadingScreen() {
       }
 
       setProgress(value);
-    }, 90);
+    }, 100);
 
     return () => {
       clearInterval(interval);
@@ -48,20 +48,20 @@ export default function LoadingScreen() {
           initial={{ opacity: 1 }}
           exit={{
             opacity: 0,
-            scale: 1.05,
+            scale: 1.02,
             transition: {
-              duration: 0.8,
+              duration: 0.7,
+              ease: "easeInOut",
             },
           }}
         >
           <div className="loading-container">
 
-            <div className="loading-orb" />
-
+            {/* Profile Photo */}
             <motion.div
-              className="loading-logo"
+              className="loading-profile"
               initial={{
-                scale: 0.5,
+                scale: 0.8,
                 opacity: 0,
               }}
               animate={{
@@ -69,30 +69,60 @@ export default function LoadingScreen() {
                 opacity: 1,
               }}
               transition={{
-                duration: 0.8,
+                duration: 0.7,
+                ease: [0.16, 1, 0.3, 1],
               }}
             >
-              Y
+              <img
+                src="/profile.png"
+                alt="Yash Kumar Dewangan"
+              />
             </motion.div>
 
+            {/* Name */}
             <motion.h2
-              initial={{ y: 25, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
+              initial={{
+                y: 20,
+                opacity: 0,
+              }}
+              animate={{
+                y: 0,
+                opacity: 1,
+              }}
+              transition={{
+                duration: 0.6,
+                delay: 0.15,
+              }}
             >
               Yash Kumar Dewangan
             </motion.h2>
 
-            <p>Crafting Premium Digital Experiences</p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                duration: 0.5,
+                delay: 0.25,
+              }}
+            >
+              Full Stack Developer
+            </motion.p>
 
+            {/* Loading Bar */}
             <div className="loading-bar">
               <motion.div
                 className="loading-progress"
                 animate={{
                   width: `${progress}%`,
                 }}
+                transition={{
+                  duration: 0.15,
+                  ease: "linear",
+                }}
               />
             </div>
 
+            {/* Percentage */}
             <span className="loading-percent">
               {progress}%
             </span>

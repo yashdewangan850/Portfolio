@@ -7,104 +7,131 @@ import {
   Rocket,
   Target,
 } from "lucide-react";
-
 import { motion } from "framer-motion";
 import { FadeIn } from "@/components/motion/fade-in";
+import "../styles/timeline.css";
 
 const timeline = [
   {
     year: "2022",
-    icon: <GraduationCap size={22} />,
+    icon: GraduationCap,
     title: "Started B.Tech in Computer Science",
-    company: "Government Engineering College, Ambikapur",
+    organization: "Government Engineering College, Ambikapur",
     description:
-      "Started my Computer Science & Engineering journey while building a strong foundation in programming, data structures, algorithms, databases, and software engineering.",
+      "Started my Computer Science & Engineering journey with a focus on programming, software development and computer science fundamentals.",
   },
   {
     year: "2024",
-    icon: <Code2 size={22} />,
-    title: "Web Development Training",
-    company: "Logixhunt, Bhilai",
+    icon: Code2,
+    title: "Frontend Web Development Training",
+    organization: "Logixhunt, Bhilai",
     description:
-      "Completed professional training in HTML, CSS, JavaScript, React.js, Bootstrap, Git, and responsive web development while building real-world projects.",
+      "Completed practical web development training and worked with HTML, CSS, JavaScript and Bootstrap to build responsive web interfaces.",
   },
-  // {
-  //   year: "2025",
-  //   icon: <Briefcase size={22} />,
-  //   title: "Full Stack MERN Development",
-  //   company: "Personal & Academic Projects",
-  //   description:
-  //     "Built full-stack web applications using React.js, Node.js, Express.js, MongoDB, REST APIs, authentication, and responsive UI/UX design.",
-  // },
+  {
+    year: "2025",
+    icon: Briefcase,
+    title: "Full Stack Development",
+    organization: "Projects & Development",
+    description:
+      "Started building full-stack applications using React, Node.js, Express, MongoDB and REST APIs.",
+  },
   {
     year: "2026",
-    icon: <Rocket size={22} />,
-    title: "AI-Powered Projects",
-    company: "Independent Development",
+    icon: Rocket,
+    title: "AI-Powered Applications",
+    organization: "Independent Development",
     description:
-      "Developed AI Mock Interview Platform, GPS Attendance System, and macOS Portfolio Clone by integrating Gemini AI and modern web technologies.",
+      "Built projects combining modern web technologies with AI APIs, including an AI-powered mock interview platform.",
   },
   {
     year: "Present",
-    icon: <Target size={22} />,
+    icon: Target,
     title: "Open to Software Opportunities",
-    company: "Software Engineer • MERN Stack Developer",
+    organization: "Full Stack Developer",
     description:
-      "Actively seeking Software Engineer, Full Stack Developer, Frontend Developer, and MERN Stack Developer roles while continuously learning and building impactful products.",
+      "Looking for an opportunity to contribute to real-world software products while continuing to grow as a professional developer.",
   },
 ];
 
 export function TimelineSection() {
   return (
-    <section id="journey" className="timeline section shell">
-      <div className="section-heading">
-        <span className="section-tag">
-          04 / JOURNEY
-        </span>
+    <section id="journey" className="new-timeline section shell">
+      <FadeIn>
+        <div className="new-timeline-top">
+          <div className="new-timeline-index">
+            <span>05</span>
+            <div />
+            <span>MY JOURNEY</span>
+          </div>
 
-        <h2>
-          My <span>Professional Journey</span>
-        </h2>
+          <span className="new-timeline-kicker">
+            EDUCATION / DEVELOPMENT / FUTURE
+          </span>
+        </div>
+      </FadeIn>
 
-        <p className="section-intro">
-          From learning programming fundamentals to building AI-powered
-          full-stack applications, every milestone represents continuous
-          growth, practical experience, and a passion for creating impactful
-          software.
-        </p>
+      <div className="new-timeline-heading">
+        <FadeIn>
+          <h2>
+            From learning
+            <br />
+            to <span>building.</span>
+          </h2>
+        </FadeIn>
+
+        <FadeIn delay={0.1}>
+          <p>
+            A timeline of the experiences, projects and milestones that have
+            shaped my journey as a software developer.
+          </p>
+        </FadeIn>
       </div>
 
-      <div className="timeline-wrapper">
-        <div className="timeline-line" />
+      <div className="new-timeline-list">
+        {timeline.map((item, index) => {
+          const Icon = item.icon;
 
-        {timeline.map((item, index) => (
-          <FadeIn key={item.year} delay={index * 0.08}>
-            <motion.article
-              whileHover={{ y: -8 }}
-              transition={{ duration: 0.3 }}
-              className={`timeline-item ${
-                index % 2 === 0 ? "left" : "right"
-              }`}
+          return (
+            <FadeIn
+              key={`${item.year}-${item.title}`}
+              delay={index * 0.07}
             >
-              <div className="timeline-dot">
-                {item.icon}
-              </div>
-
-              <div className="timeline-card">
-                <span className="timeline-year">
+              <motion.article
+                className="new-timeline-item"
+                whileHover={{ x: 5 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="new-timeline-year">
                   {item.year}
-                </span>
+                </div>
 
-                <h3>{item.title}</h3>
+                <div className="new-timeline-marker">
+                  <Icon size={18} strokeWidth={1.5} />
+                </div>
 
-                <h4>{item.company}</h4>
+                <div className="new-timeline-content">
+                  <span>{item.organization}</span>
 
-                <p>{item.description}</p>
-              </div>
-            </motion.article>
-          </FadeIn>
-        ))}
+                  <h3>{item.title}</h3>
+
+                  <p>{item.description}</p>
+                </div>
+              </motion.article>
+            </FadeIn>
+          );
+        })}
       </div>
+
+      <FadeIn>
+        <div className="new-timeline-bottom">
+          <span>2022 — PRESENT</span>
+
+          <strong>
+            Learning. Building. Improving.
+          </strong>
+        </div>
+      </FadeIn>
     </section>
   );
 }

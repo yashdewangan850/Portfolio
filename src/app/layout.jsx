@@ -1,7 +1,7 @@
 import "./globals.css";
 
 import { Inter } from "next/font/google";
-
+import LoadingScreen from "@/components/ui/loading-screen";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import CustomCursor from "@/components/ui/custom-cursor";
 import ScrollProgress from "@/components/ui/scroll-progress";
@@ -99,7 +99,7 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
       <body className={`${inter.className} min-h-screen`}>
-        {/* <LoadingScreen /> */}
+        {/* <LoadingScreen /> */} <LoadingScreen />
 
         <CustomCursor />
 

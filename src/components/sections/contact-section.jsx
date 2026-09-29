@@ -1,200 +1,128 @@
 "use client";
 
-import {
-  Mail,
-  MapPin,
-  Download,
-  ArrowUpRight,
-} from "lucide-react";
-
+import { ArrowUpRight, Mail, MapPin, Download } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-
 import { motion } from "framer-motion";
 import { FadeIn } from "@/components/motion/fade-in";
-
-const contactInfo = [
-  {
-    icon: <Mail size={22} />,
-    title: "Email",
-    value: "yashdewangan850@gmail.com",
-    href: "mailto:yashdewangan850@gmail.com",
-  },
-  {
-    icon: <FaGithub size={22} />,
-    title: "GitHub",
-    value: "github.com/yashdewangan850",
-    href: "https://github.com/yashdewangan850",
-  },
-  {
-    icon: <FaLinkedin size={22} />,
-    title: "LinkedIn",
-    value: "linkedin.com/in/yash-kumar-dewangan",
-    href: "https://linkedin.com/in/yash-kumar-dewangan",
-  },
-  {
-    icon: <MapPin size={22} />,
-    title: "Location",
-    value: "India",
-    href: "#",
-  },
-];
+import "../styles/contact.css";
 
 export function ContactSection() {
   return (
-    <section
-      id="contact"
-      className="contact section shell"
-    >
-      <div className="section-heading">
+    <section id="contact" className="new-contact section shell">
+      <FadeIn>
+        <div className="new-contact-top">
+          <div className="new-contact-index">
+            <span>06</span>
+            <div />
+            <span>CONTACT</span>
+          </div>
 
-        <span className="section-tag">
-          05 / CONTACT
-        </span>
+          <span className="new-contact-kicker">
+            LET&apos;S BUILD SOMETHING
+          </span>
+        </div>
+      </FadeIn>
 
-        <h2>
-          Let's build something
-          <span> amazing together.</span>
-        </h2>
-
-        <p className="section-intro">
-          I'm currently open to Full-Time Software
-          Development opportunities. Whether you have
-          an exciting project or an opportunity,
-          I'd love to hear from you.
-        </p>
-
-      </div>
-
-      <div className="contact-grid">
-
+      <div className="new-contact-main">
         <FadeIn>
+          <div className="new-contact-heading">
+            <span>HAVE A PROJECT OR OPPORTUNITY?</span>
 
-          <div className="contact-left">
-
-            <h3>
-              Get In Touch
-            </h3>
+            <h2>
+              Let&apos;s talk
+              <br />
+              <em>about it.</em>
+            </h2>
 
             <p>
-              Feel free to reach out for Software
-              Engineering, MERN Stack Development,
-              Frontend Development or collaboration
-              opportunities.
+              I&apos;m currently open to software development opportunities,
+              internships and projects where I can contribute and continue
+              growing as a developer.
             </p>
-
-            <div className="contact-list">
-
-              {contactInfo.map((item) => (
-
-                <motion.a
-                  key={item.title}
-                  href={item.href}
-                  target={
-                    item.href.startsWith("http")
-                      ? "_blank"
-                      : "_self"
-                  }
-                  rel="noreferrer"
-                  whileHover={{
-                    y: -5,
-                  }}
-                  className="contact-card"
-                >
-
-                  <div className="contact-icon">
-                    {item.icon}
-                  </div>
-
-                  <div>
-
-                    <span>
-                      {item.title}
-                    </span>
-
-                    <h4>
-                      {item.value}
-                    </h4>
-
-                  </div>
-
-                </motion.a>
-
-              ))}
-
-            </div>
-
           </div>
-
         </FadeIn>
 
-        <FadeIn delay={0.08}>
-
-          <div className="contact-right">
-
-            <div className="contact-box">
-
-              <span className="contact-tag">
-                Available for Work
+        <FadeIn delay={0.1}>
+          <div className="new-contact-details">
+            <a
+              href="mailto:yashdewangan850@gmail.com"
+              className="new-contact-email"
+            >
+              <span className="new-contact-detail-label">
+                EMAIL
               </span>
 
-              <h3>
-                Ready to create impactful software.
-              </h3>
+              <strong>
+                yashdewangan850@gmail.com
+              </strong>
 
-              <p>
-                I'm actively looking for
-                Full Stack Developer,
-                Software Engineer and
-                MERN Stack Developer roles.
-                Let's connect and discuss
-                how I can contribute to your team.
-              </p>
+              <ArrowUpRight size={18} />
+            </a>
 
-              <div className="contact-actions">
+            <div className="new-contact-info">
+              <div>
+                <MapPin size={17} strokeWidth={1.5} />
 
-                <motion.a
-                  href="mailto:yashdewangan850@gmail.com"
-                  whileHover={{
-                    scale: 1.05,
-                  }}
-                  whileTap={{
-                    scale: .96,
-                  }}
-                  className="contact-btn"
-                >
-                  Send Email
-
-                  <ArrowUpRight size={18} />
-
-                </motion.a>
-
-                <motion.a
-                  href="/resume.pdf"
-                  download
-                  whileHover={{
-                    scale: 1.05,
-                  }}
-                  whileTap={{
-                    scale: .96,
-                  }}
-                  className="contact-btn secondary"
-                >
-                  <Download size={18} />
-
-                  Download Resume
-
-                </motion.a>
-
+                <span>
+                  Hyderabad, India
+                </span>
               </div>
 
+              <div>
+                <Mail size={17} strokeWidth={1.5} />
+
+                <span>
+                  Open to opportunities
+                </span>
+              </div>
             </div>
 
+            <div className="new-contact-socials">
+              <a
+                href="https://github.com/yashdewangan850"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub size={17} />
+                GitHub
+                <ArrowUpRight size={14} />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/yash-kumar-dewangan-5b0607266/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin size={17} />
+                LinkedIn
+                <ArrowUpRight size={14} />
+              </a>
+            </div>
+
+            <motion.a
+              href="/Yash_Kumar_Dewangan_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="new-contact-resume"
+              whileHover={{ y: -3 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Download size={16} />
+              Download Resume
+            </motion.a>
           </div>
-
         </FadeIn>
-
       </div>
 
+      <FadeIn>
+        <div className="new-contact-bottom">
+          <span>YASH KUMAR DEWANGAN</span>
+
+          <span>
+            SOFTWARE DEVELOPER · 2026
+          </span>
+        </div>
+      </FadeIn>
     </section>
   );
 }

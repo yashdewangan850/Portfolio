@@ -1,18 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-
-import {
-  motion,
-  useMotionValue,
-  useSpring,
-  useTransform,
-} from "framer-motion";
-
 import { ArrowUpRight, ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
-
+import { motion } from "framer-motion";
 import { FadeIn } from "@/components/motion/fade-in";
 import { projects } from "@/data/portfolio";
 
@@ -20,194 +11,184 @@ export default function ProjectSection() {
   return (
     <section
       id="projects"
-      className="projects section shell"
+      className="new-projects section shell"
     >
+      {/* Header */}
+
       <FadeIn>
-        <div className="section-top">
-          <span className="kicker">
-            01 / SELECTED WORK
-          </span>
+        <div className="new-projects-header">
+          <div className="new-projects-index">
+            <span>02</span>
+            <div />
+            <span>SELECTED WORK</span>
+          </div>
 
-          <h2>
-            Featured <span>Projects</span>
-          </h2>
+          <div>
+            <span className="new-projects-kicker">
+              PROJECTS / 2024 — 2026
+            </span>
 
-          <p>
-            A collection of AI-powered products,
-            full-stack applications and modern web
-            experiences.
-          </p>
+            <h2>
+              Things I&apos;ve
+              <span> built.</span>
+            </h2>
+
+            <p>
+              A selection of applications and experiments
+              focused on solving real problems through software.
+            </p>
+          </div>
         </div>
       </FadeIn>
 
-      <div className="projects-grid">
-        {projects.map((project, index) => {
-          const mouseX = useMotionValue(0);
-          const mouseY = useMotionValue(0);
+      {/* Projects */}
 
-          const rotateX = useSpring(0, {
-            stiffness: 220,
-            damping: 22,
-          });
-
-          const rotateY = useSpring(0, {
-            stiffness: 220,
-            damping: 22,
-          });
-
-          const glowX = useTransform(
-            mouseX,
-            (v) => `${v}px`
-          );
-
-          const glowY = useTransform(
-            mouseY,
-            (v) => `${v}px`
-          );
-
-          function handleMove(e) {
-            const rect =
-              e.currentTarget.getBoundingClientRect();
-
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            mouseX.set(x);
-            mouseY.set(y);
-
-            rotateX.set(
-              ((rect.height / 2 - y) /
-                rect.height) *
-              10
-            );
-
-            rotateY.set(
-              ((x - rect.width / 2) /
-                rect.width) *
-              10
-            );
-          }
-
-          function handleLeave() {
-            rotateX.set(0);
-            rotateY.set(0);
-          }
-
-          return (
-            <FadeIn
-              key={project.slug}
-              delay={index * 0.08}
+      <div className="new-projects-list">
+        {projects.map((project, index) => (
+          <FadeIn
+            key={project.slug}
+            delay={index * 0.08}
+          >
+            <motion.article
+              className="new-project"
+              whileHover="hover"
             >
-              <motion.article
-                className={[
-                  "project-card",
-                  project.tint,
-                  project.featured &&
-                  "featured",
-                ]
-                  .filter(Boolean)
-                  .join(" ")}
-                style={{
-                  rotateX,
-                  rotateY,
-                  transformPerspective: 1400,
-                  "--x": glowX,
-                  "--y": glowY,
-                }}
-                onMouseMove={handleMove}
-                onMouseLeave={handleLeave}
-                whileHover={{
-                  y: -10,
-                }}
-              >
-                <span className="spotlight" />
+              {/* Info */}
 
-                <div className="project-image">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    priority={project.featured}
-                  />
+              <div className="new-project-info">
+                <div className="new-project-number">
+                  {String(index + 1).padStart(2, "0")}
                 </div>
 
-                <div className="project-content">
-
-                  <div className="project-top">
-                    <span className="project-number">
-                      {project.number}
-                    </span>
-
-                    <span className={`status ${project.status.toLowerCase()}`}>
-                      {project.status}
-                    </span>
+                <div className="new-project-details">
+                  <div className="new-project-status">
+                    <span />
+                    {project.status || "PROJECT"}
                   </div>
 
-                  <h3 className="project-title">
-                    {project.title}
-                  </h3>
+                  <h3>{project.title}</h3>
 
-                  <p className="project-description">
+                  <p>
                     {project.copy}
                   </p>
 
-                  <div className="tags">
-                    {project.tags.map((tag) => (
-                      <span key={tag}>
+                  <div className="new-project-tags">
+                    {project.tags?.map((tag, tagIndex) => (
+                      <span
+                        key={`${project.slug}-${tag}-${tagIndex}`}
+                      >
                         {tag}
                       </span>
                     ))}
                   </div>
 
-                  <div className="project-actions">
+                  <div className="new-project-links">
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Live Project
+                        <ExternalLink size={14} />
+                      </a>
+                    )}
 
                     {project.github && (
                       <a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="project-btn"
                       >
-                        <FaGithub />
                         GitHub
+                        <FaGithub size={14} />
                       </a>
                     )}
-
-                    {project.live && (
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="project-btn"
-                      >
-                        <ExternalLink size={16} />
-                        Live Demo
-                      </a>
-                    )}
-
-                    {/* <Link
-                      href={`/projects/${project.slug}`}
-                      className="project-view"
-                    >
-                      View Project
-                      <ArrowUpRight size={18} />
-                    </Link> */}
-
                   </div>
-
                 </div>
+              </div>
 
-              </motion.article>
+              {/* Image */}
 
-            </FadeIn>
+              <motion.a
+                href={project.live || project.github || "#"}
+                target={
+                  project.live || project.github
+                    ? "_blank"
+                    : undefined
+                }
+                rel="noopener noreferrer"
+                className="new-project-image"
+                variants={{
+                  hover: {
+                    scale: 0.985,
+                  },
+                }}
+              >
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 900px) 100vw, 55vw"
+                  className="new-project-image-img"
+                />
 
-          );
-        })}
+                <motion.div
+                  className="new-project-image-overlay"
+                  variants={{
+                    hover: {
+                      opacity: 0.2,
+                    },
+                  }}
+                />
 
+                <motion.div
+                  className="new-project-image-arrow"
+                  variants={{
+                    hover: {
+                      scale: 1,
+                      opacity: 1,
+                      x: 0,
+                      y: 0,
+                    },
+                  }}
+                  initial={{
+                    scale: 0.7,
+                    opacity: 0,
+                    x: 10,
+                    y: 10,
+                  }}
+                >
+                  <ArrowUpRight size={21} />
+                </motion.div>
+
+                <div className="new-project-image-label">
+                  {String(index + 1).padStart(2, "0")} / VIEW
+                </div>
+              </motion.a>
+            </motion.article>
+          </FadeIn>
+        ))}
       </div>
 
+      {/* Footer */}
+
+      <FadeIn>
+        <div className="new-projects-footer">
+          <span>
+            MORE PROJECTS AVAILABLE ON GITHUB
+          </span>
+
+          <a
+            href="https://github.com/yashdewangan850"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View GitHub
+            <ArrowUpRight size={16} />
+          </a>
+        </div>
+      </FadeIn>
     </section>
-
   );
-
 }

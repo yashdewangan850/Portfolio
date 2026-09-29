@@ -1,11 +1,15 @@
-/* ==========================================
-   PREMIUM HEADER
-========================================== */
-
+/* =========================================================
+   PREMIUM HEADER / NAVBAR
+========================================================= */
+html {
+  scroll-behavior: smooth;
+}
 .nav {
   position: fixed;
+
   top: 0;
   left: 0;
+
   width: 100%;
   height: 80px;
 
@@ -15,32 +19,48 @@
 
   z-index: 1000;
 
-  transition: all 0.35s ease;
-
   background: transparent;
+
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    backdrop-filter 0.35s ease;
 }
 
+
+/* =========================================================
+   SCROLLED NAVBAR
+========================================================= */
+
 .nav-scroll {
-  background: rgba(15, 15, 18, 0.72);
+  background: rgba(8, 9, 11, 0.82);
+
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 
-  border-bottom: 1px solid var(--line);
+  border-bottom:
+    1px solid var(--border);
 
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.22);
 }
 
 .nav-inner {
-  width: min(1280px, calc(100% - 48px));
+  width: min(
+    1280px,
+    calc(100% - 48px)
+  );
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* ==========================================
+
+/* =========================================================
    LOGO
-========================================== */
+========================================================= */
 
 .brand {
   display: flex;
@@ -53,13 +73,16 @@
 
   letter-spacing: -1.2px;
 
-  color: var(--ink);
+  color: var(--foreground);
 
-  transition: 0.3s;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    text-shadow 0.3s ease;
 }
 
 .brand span {
-  color: var(--primary);
+  color: var(--accent);
 
   margin-left: 2px;
 }
@@ -67,15 +90,21 @@
 .brand:hover {
   transform: translateY(-2px);
 
-  color: var(--primary);
+  color: var(--accent-light);
+
+  text-shadow:
+    0 0 18px rgba(59, 130, 246, 0.3);
 }
-/* ==========================================
+
+
+/* =========================================================
    DESKTOP NAVIGATION
-========================================== */
+========================================================= */
 
 .desktop-nav {
   display: flex;
   align-items: center;
+
   gap: 34px;
 }
 
@@ -86,19 +115,24 @@
 
   color: var(--muted);
 
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
 
   letter-spacing: 0.2px;
 
-  transition: all 0.3s ease;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .desktop-nav a:hover {
-  color: var(--ink);
+  color: var(--foreground);
 }
 
-/* Underline Animation */
+
+/* =========================================================
+   NAV UNDERLINE
+========================================================= */
 
 .desktop-nav a::after {
   content: "";
@@ -113,37 +147,49 @@
 
   border-radius: 20px;
 
-  background: linear-gradient(90deg, var(--primary), #7c5cff);
+  background:
+    var(--accent);
 
-  transition: width 0.35s ease;
+  box-shadow:
+    0 0 8px rgba(59, 130, 246, 0.35);
+
+  transition:
+    width 0.35s ease;
 }
 
 .desktop-nav a:hover::after {
   width: 100%;
 }
 
-/* Active Link */
+
+/* =========================================================
+   ACTIVE LINK
+========================================================= */
 
 .desktop-nav a.active {
-  color: var(--ink);
+  color: var(--accent-light);
 }
 
 .desktop-nav a.active::after {
   width: 100%;
 }
 
-/* ==========================================
+
+/* =========================================================
    RIGHT ACTIONS
-========================================== */
+========================================================= */
 
 .nav-actions {
   display: flex;
   align-items: center;
+
   gap: 14px;
 }
-/* ==========================================
+
+
+/* =========================================================
    RESUME BUTTON
-========================================== */
+========================================================= */
 
 .resume-btn {
   display: flex;
@@ -151,33 +197,48 @@
   justify-content: center;
 
   height: 44px;
+
   padding: 0 22px;
 
   border-radius: 999px;
-  border: 1px solid transparent;
+
+  border:
+    1px solid var(--accent);
 
   text-decoration: none;
 
-  background: var(--primary);
-  color: #fff;
+  background:
+    var(--accent);
 
-  font-size: 14px;
+  color: #ffffff;
+
+  font-size: 13px;
   font-weight: 600;
 
-  transition: all 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .resume-btn:hover {
   transform: translateY(-2px);
 
-  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.35);
+  background:
+    var(--accent-dark);
 
-  filter: brightness(1.05);
+  border-color:
+    var(--accent-light);
+
+  box-shadow:
+    0 12px 30px rgba(59, 130, 246, 0.28);
 }
 
-/* ==========================================
+
+/* =========================================================
    THEME BUTTON
-========================================== */
+========================================================= */
 
 .theme-btn {
   width: 44px;
@@ -189,28 +250,46 @@
 
   border-radius: 50%;
 
-  border: 1px solid var(--line);
+  border:
+    1px solid var(--border);
 
-  background: var(--surface);
+  background:
+    var(--surface);
 
-  color: var(--ink);
+  color:
+    var(--foreground);
 
   cursor: pointer;
 
-  transition: all 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .theme-btn:hover {
-  background: var(--primary);
+  background:
+    var(--accent);
 
-  color: #fff;
+  color:
+    #ffffff;
 
-  transform: rotate(180deg);
+  border-color:
+    var(--accent);
+
+  transform:
+    rotate(180deg);
+
+  box-shadow:
+    0 10px 28px rgba(59, 130, 246, 0.25);
 }
 
-/* ==========================================
+
+/* =========================================================
    MENU BUTTON
-========================================== */
+========================================================= */
 
 .menu-btn {
   display: none;
@@ -223,54 +302,83 @@
 
   border-radius: 12px;
 
-  border: 1px solid var(--line);
+  border:
+    1px solid var(--border);
 
-  background: var(--surface);
+  background:
+    var(--surface);
 
-  color: var(--ink);
+  color:
+    var(--foreground);
 
   cursor: pointer;
 
-  transition: all 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .menu-btn:hover {
-  background: var(--primary);
+  background:
+    var(--accent);
 
-  color: #fff;
+  color:
+    #ffffff;
 
-  transform: scale(1.05);
+  border-color:
+    var(--accent);
+
+  transform:
+    scale(1.05);
+
+  box-shadow:
+    0 8px 24px rgba(59, 130, 246, 0.25);
 }
 
 .menu-btn:active {
-  transform: scale(0.96);
+  transform:
+    scale(0.96);
 }
-/* ==========================================
+
+
+/* =========================================================
    MOBILE MENU
-========================================== */
+========================================================= */
 
 .mobile-menu {
   position: absolute;
 
   top: 90px;
+
   left: 20px;
   right: 20px;
 
   display: flex;
   flex-direction: column;
+
   gap: 18px;
 
   padding: 24px;
 
-  border: 1px solid var(--line);
-  border-radius: 24px;
+  border:
+    1px solid var(--border);
 
-  background: rgba(18, 18, 20, 0.92);
+  border-radius: 20px;
 
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background:
+    rgba(13, 15, 18, 0.96);
 
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  backdrop-filter:
+    blur(20px);
+
+  -webkit-backdrop-filter:
+    blur(20px);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35);
 }
 
 .mobile-menu a {
@@ -278,21 +386,30 @@
 
   color: var(--muted);
 
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
 
-  transition: 0.3s;
+  transition:
+    color 0.3s ease,
+    padding-left 0.3s ease;
 }
 
 .mobile-menu a:hover {
-  color: var(--primary);
+  color:
+    var(--accent-light);
 
   padding-left: 8px;
 }
 
 .mobile-menu a.active {
-  color: var(--primary);
+  color:
+    var(--accent-light);
 }
+
+
+/* =========================================================
+   MOBILE RESUME
+========================================================= */
 
 .mobile-resume {
   margin-top: 8px;
@@ -303,26 +420,45 @@
 
   height: 46px;
 
-  border-radius: 14px;
+  border-radius: 12px;
 
-  background: var(--primary);
+  border:
+    1px solid var(--accent);
 
-  color: #fff !important;
+  background:
+    var(--accent);
+
+  color:
+    #ffffff !important;
 
   font-weight: 700;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .mobile-resume:hover {
-  transform: translateY(-2px);
+  transform:
+    translateY(-2px);
 
   padding-left: 0 !important;
 
-  color: #fff;
+  background:
+    var(--accent-dark);
+
+  color:
+    #ffffff !important;
+
+  box-shadow:
+    0 10px 25px rgba(59, 130, 246, 0.25);
 }
 
-/* ==========================================
+
+/* =========================================================
    RESPONSIVE
-========================================== */
+========================================================= */
 
 @media (max-width: 900px) {
   .desktop-nav {
@@ -338,11 +474,13 @@
   }
 }
 
+
 @media (min-width: 901px) {
   .mobile-menu {
     display: none;
   }
 }
+
 
 @media (max-width: 768px) {
   .nav {
@@ -350,13 +488,15 @@
   }
 
   .nav-inner {
-    width: calc(100% - 28px);
+    width:
+      calc(100% - 28px);
   }
 
   .brand {
     font-size: 24px;
   }
 }
+
 
 @media (max-width: 480px) {
   .mobile-menu {
@@ -374,118 +514,70 @@
     height: 42px;
   }
 }
-/* ==========================================
-   PREMIUM EFFECTS
-========================================== */
 
-/* Smooth Transition */
 
-.nav,
-.nav *,
-.desktop-nav a,
-.resume-btn,
-.theme-btn,
-.menu-btn,
-.mobile-menu a {
-  transition:
-    color 0.3s ease,
-    background 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease,
-    opacity 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-/* Brand Glow */
-
-.brand:hover {
-  text-shadow: 0 0 18px rgba(99, 102, 241, 0.45);
-}
-
-/* Resume Gradient */
-
-.resume-btn {
-  background: linear-gradient(135deg, #6366f1, #7c3aed);
-}
-
-.resume-btn:hover {
-  box-shadow: 0 15px 35px rgba(99, 102, 241, 0.4);
-}
-
-/* Theme Button Glow */
-
-.theme-btn:hover {
-  box-shadow: 0 10px 28px rgba(99, 102, 241, 0.28);
-}
-
-/* Menu Glow */
-
-.menu-btn:hover {
-  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.25);
-}
-
-/* Active Link */
-
-.desktop-nav a.active {
-  color: var(--primary);
-}
-
-/* Selection */
-
-.nav ::selection {
-  background: var(--primary);
-  color: #fff;
-}
-
-/* ==========================================
-   LIGHT MODE
-========================================== */
-
-html[data-theme="light"] .nav-scroll {
-  background: rgba(255, 255, 255, 0.78);
-
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-html[data-theme="light"] .mobile-menu {
-  background: rgba(255, 255, 255, 0.95);
-}
-
-html[data-theme="light"] .theme-btn,
-html[data-theme="light"] .menu-btn {
-  background: #fff;
-}
-
-/* ==========================================
+/* =========================================================
    ACCESSIBILITY
-========================================== */
+========================================================= */
 
 .desktop-nav a:focus-visible,
 .resume-btn:focus-visible,
 .theme-btn:focus-visible,
-.menu-btn:focus-visible {
-  outline: 2px solid var(--primary);
+.menu-btn:focus-visible,
+.mobile-menu a:focus-visible {
+  outline:
+    2px solid var(--accent);
+
   outline-offset: 3px;
 }
 
-/* ==========================================
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+.nav ::selection {
+  background:
+    var(--accent);
+
+  color:
+    #ffffff;
+}
+
+
+/* =========================================================
    PERFORMANCE
-========================================== */
+========================================================= */
 
 .nav,
 .mobile-menu {
-  will-change: transform, opacity;
+  will-change:
+    transform,
+    opacity;
 }
 
 .brand,
 .resume-btn,
 .theme-btn,
 .menu-btn {
-  backface-visibility: hidden;
+  backface-visibility:
+    hidden;
 }
 
-/* ==========================================
-   END
-========================================== */
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .nav,
+  .brand,
+  .desktop-nav a,
+  .resume-btn,
+  .theme-btn,
+  .menu-btn,
+  .mobile-menu,
+  .mobile-menu a {
+    transition: none !important;
+  }
+}
